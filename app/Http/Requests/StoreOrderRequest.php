@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StoreOrderRequest extends FormRequest
 {
@@ -11,7 +12,8 @@ class StoreOrderRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        $user = Auth::getUser();
+        return $user['type'] == 0;
     }
 
     /**
@@ -22,7 +24,7 @@ class StoreOrderRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'items' => 'required|Array'
         ];
     }
 }
