@@ -16,8 +16,10 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->float('value',2);
             $table->boolean('curr_type');
+            $table->integer('category',0,1);
+            $table->integer('count',0,1);
             $table->text('details');
-            $table->json('images');
+            $table->text('images');
             $table->timestamps();
         });
     }
