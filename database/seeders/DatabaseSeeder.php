@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
 
         Order::factory()->create([
             'user_id' => 1,
-            'items' => [0, 1, 3],
+            'items' => '[0, 1, 3]',
         ]);
     }
 }
