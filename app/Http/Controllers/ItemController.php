@@ -4,15 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Item;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ItemController extends Controller
 {
     /**
      * Display a listing of the resource.
+     *
+     * @return Response
      */
     public function index()
     {
-        //
+        return response(Item::all());
     }
 
     /**
@@ -20,7 +23,9 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $item = new Item($request->except(['_token']));
+        $item->save();
+        return \response($item);
     }
 
     /**
@@ -28,7 +33,7 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
-        //
+        return \response($item);
     }
 
     /**
@@ -36,7 +41,8 @@ class ItemController extends Controller
      */
     public function update(Request $request, Item $item)
     {
-        //
+        $item->update($request->except('_token'));
+        return \response($item);
     }
 
     /**
@@ -44,6 +50,7 @@ class ItemController extends Controller
      */
     public function destroy(Item $item)
     {
-        //
+        $item->delete();
+        return \response('item have been removed!');
     }
 }
