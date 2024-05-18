@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->unique();
+            $table->float('value',2);
+            $table->boolean('curr_type');
+            $table->text('details');
+            $table->json('images');
             $table->timestamps();
         });
     }

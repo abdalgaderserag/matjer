@@ -17,7 +17,13 @@ class ItemFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->name,
+            'value' => rand(100,10000),
+            'category'=> rand(0,6),
+            'count' => rand(0,8),
+            'curr_type' => rand(0,1),
+            'details' => $this->faker->text,
+            'images' => ['/images/item.png'],
         ];
     }
 }
