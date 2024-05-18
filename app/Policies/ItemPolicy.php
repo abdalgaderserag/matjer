@@ -11,9 +11,9 @@ class ItemPolicy
     /**
      * Determine whether the user can view any models.
      */
-    public function viewAny(User $user): bool
+    public function viewAny(): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -21,7 +21,7 @@ class ItemPolicy
      */
     public function view(User $user, Item $item): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -29,7 +29,7 @@ class ItemPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return $user['type'] == 1;
     }
 
     /**
@@ -37,7 +37,7 @@ class ItemPolicy
      */
     public function update(User $user, Item $item): bool
     {
-        //
+        return $user['type'] == 1;
     }
 
     /**
@@ -45,7 +45,7 @@ class ItemPolicy
      */
     public function delete(User $user, Item $item): bool
     {
-        //
+        return $user['type'] == 1;
     }
 
     /**
@@ -53,7 +53,7 @@ class ItemPolicy
      */
     public function restore(User $user, Item $item): bool
     {
-        //
+        return $user['type'] == 1;
     }
 
     /**
@@ -61,6 +61,6 @@ class ItemPolicy
      */
     public function forceDelete(User $user, Item $item): bool
     {
-        //
+        return $user['type'] == 1;
     }
 }
