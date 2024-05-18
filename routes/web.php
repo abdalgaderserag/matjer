@@ -6,4 +6,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::apiResource('item','\App\Http\Controllers\ItemController');
+Route::namespace('\App\Http\Controllers')->
+    group(function (){
+    Route::apiResource('item','ItemController');
+    Route::apiResource('order', 'OrderController');
+});
