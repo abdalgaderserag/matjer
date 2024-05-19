@@ -1,0 +1,17 @@
+@import "../variables";
+
+#items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card{
+    width: $card;
+    min-width: $card-min;
+}
+
+.item-image{
+    min-width: $card-min;
+    width: 100%;
+}

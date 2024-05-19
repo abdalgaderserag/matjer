@@ -33,10 +33,10 @@ class Item extends Model
      * out put price with the right type of coin
      *
      */
-    public function getCountAttribute($cost)
+    public function getValueAttribute($cost)
     {
-        return config('matjer.curr[' . $this->curr_type . ']',) . ' ' . $cost;
-//        return '$ ' . $cost;
+        $sy = config('matjer.curr',);
+        return $sy[$this->curr_type] . $cost;
     }
 
 
@@ -53,6 +53,24 @@ class Item extends Model
     {
         return config('matjer.category[' . $category . ']', 'other');
 
+    }
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @return string
+     * @var $images
+     *
+     * out put price with the right type of coin
+     *
+     */
+    public function getImagesAttribute($images)
+    {
+//        for ($i =0 ;$i< sizeof($images);$i++){
+//            $images[$i] = url($images[$i]);
+//        }
+//        return $images;
+        return url($images);
     }
 
 }

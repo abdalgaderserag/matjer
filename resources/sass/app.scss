@@ -2,6 +2,9 @@
 
 body{
     margin: 0;
+    font-family: Cairo,Arial,sans-serif;
+    font-weight: bold;
+    color: darken($purple,4);
 }
 
 div{
@@ -39,3 +42,13 @@ div{
 }
 
 
+.green{
+    color: $green;
+}
+.red{
+    color: #fff;
+    font-weight: 400;
+    background-color: $red;
+    border-radius: 40px;
+    padding: 0 20px;
+}

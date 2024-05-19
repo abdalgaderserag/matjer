@@ -13,5 +13,6 @@ Route::namespace('\App\Http\Controllers')->
 });
 
 Route::get('items',function (){
-    return view('item.index')->with('items',\App\Models\Item::all());
+    $items = \App\Models\Item::all();
+    return view('item.index')->with('items',$items);
 });
