@@ -1,6 +1,8 @@
-@in
+@extends('component.header')
+@extends('component.slide')
+@extends('component.footer')
 
-<!doctype html>
+    <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

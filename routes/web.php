@@ -11,3 +11,7 @@ Route::namespace('\App\Http\Controllers')->
     Route::apiResource('item','ItemController');
     Route::apiResource('order', 'OrderController');
 });
+
+Route::get('items',function (){
+    return view('item.index')->with('items',\App\Models\Item::all());
+});
