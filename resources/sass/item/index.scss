@@ -9,9 +9,19 @@
 .card{
     width: $card;
     min-width: $card-min;
+    margin: 0 0 20px 0;
 }
 
+.card-info{
+    .card-title{
+        cursor: pointer;
+    }
+    span{
+        cursor: pointer;
+    }
+}
 .item-image{
     min-width: $card-min;
     width: 100%;
+    cursor: pointer;
 }
