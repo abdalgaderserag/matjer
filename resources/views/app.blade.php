@@ -11,12 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title','mat\'jer')</title>
     @section('style')
-        <style>
-            body{
-                /*4D0E51 14D972 FC1969 fff*/
-                background-color: #14D972;
-            }
-        </style>
+        <link rel="stylesheet" href="{{ url('dist/css/app.css') }}">
     @show
 </head>
 <body>
