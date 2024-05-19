@@ -6,6 +6,25 @@
     justify-content: space-around;
 }
 
+#categories{
+    width: 80%;
+    display: flex;
+    justify-content:space-around;
+    margin: 0 0 36px 0;
+    div{
+        width: fit-content;
+        padding: 0 6px;
+        cursor: pointer;
+    }
+
+    .active{
+        color: $red;
+        text-decoration: $red solid from-font underline;
+    }
+}
+
+
+
 .card{
     width: $card;
     min-width: $card-min;
