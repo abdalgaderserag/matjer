@@ -16,3 +16,7 @@ Route::get('items',function (){
     $items = \App\Models\Item::all();
     return view('item.index')->with('items',$items);
 });
+
+Route::get('login',function (){
+    return view('auth.auth');
+});
