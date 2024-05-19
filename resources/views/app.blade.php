@@ -1,8 +1,4 @@
-@extends('component.header')
-@extends('component.slide')
-@extends('component.footer')
-
-    <!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,8 +14,8 @@
 @include('component.header')
 <div id="main">
     <div class="section"></div>
-    @yield('main')
-    @include('component.slide')
+    <div class="section main-section">@yield('main')</div>
+    <div class="section">@include('component.slide')</div>
 </div>
 @include('component.footer')
 </body>

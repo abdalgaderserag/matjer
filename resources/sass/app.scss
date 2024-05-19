@@ -3,3 +3,39 @@
 body{
     margin: 0;
 }
+
+div{
+    width: 100%;
+}
+
+#header{
+    height: 64px;
+    background-color: $purple;
+}
+#footer{
+    height: 264px;
+    background-color: $purple;
+}
+#footer-top {
+    background-color: $background;
+    height: 64px;
+}
+#footer-bot{
+    background-color: $green;
+    height: 6px;
+}
+
+#main{
+    display: flex;
+    justify-content: space-around;
+    margin: 24px 0;
+}
+.section{
+    width: $side-section;
+}
+
+.main-section{
+    width: $main-section;
+}
+
+
