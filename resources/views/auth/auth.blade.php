@@ -11,33 +11,30 @@
         body{
             margin: 0;
             width: 100%;
-            background-image: url("{{ url('static/test.jpeg') }}");
-            background-position: center;
-            background-size: cover;
-        }
-        #main{
-            height: 1000px;
-            display: flex;
-            align-content: center;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.44);
         }
 
-        .form-body{
+        #form-body{
             width: 52%;
             height: 420px;
+            position: fixed;
             background-color: rgba(255, 255, 255, 0.14);
             border: rgba(255, 255, 255, 0.14) solid 1px;
             border-radius: 14px;
+        }
+
+        #bg-vid{
+            position: fixed;
+            bottom: 0;
         }
     </style>
 </head>
 
 
 <body>
+
+<video id="bg-vid" autoplay muted loop src="{{ url('static/login.mp4') }}"></video>
 <div id="main">
-    <div class="form-body">
+    <div id="form-body">
         <form action="" method="post">
             <label for="email">your email :</label>
             <input type="email" name="email" id="email">
@@ -50,8 +47,11 @@
 
 </body>
 <script>
+    var ss = document.getElementById('form-body');
     function sizes(){
         document.getElementById('main').style.height = window.innerHeight + 'px';
+        document.getElementById('bg-vid').style.width = window.innerWidth + 'px';
+
     }
     sizes();
 </script>
