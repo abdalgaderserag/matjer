@@ -51,8 +51,7 @@ class Item extends Model
      */
     public function getCategoryAttribute($category)
     {
-        return config('matjer.category[' . $category . ']', 'other');
-
+        return config("matjer.category")[$category];
     }
 
     /**

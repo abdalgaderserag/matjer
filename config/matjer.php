@@ -7,7 +7,7 @@ return [
         'Gpu',
         'Cpu',
         'RAMs and Storage',
-        'Cooling',
+        'Motherboard',
         'Cases and PSU',
         'Others'
     ]

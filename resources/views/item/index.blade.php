@@ -8,7 +8,7 @@
 @section('main')
     <div id="categories">
         @foreach(config('matjer.category') as $category)
-            <div class="active">{{ $category }}</div>
+            <div onclick="addFilter(this,'{{ $category }}')">{{ $category }}</div>
         @endforeach
     </div>
     <div id="items">
@@ -18,7 +18,8 @@
 @section('script')
     @parent
     <script>
-        let items_list,categories = <?php echo json_encode(config('matjer.category'))?>;
+        let items_list,items_length;
+        let categories=[];
         // build html for items card
         function outputItems(items) {
             console.log(items);
@@ -40,17 +41,36 @@
             document.getElementById('items').innerHTML = item_card;
         }
 
-        // function to filter by category
+        // function to select item by category
         function category(cat_list){
-            let it;
-            for (let i = 0; i < items_list.length; i++) {
-                for (let j = 0; j < cat_list.length; j++) {
-                    if(items_list[i]['category'] == cat_list[j])
-                        it.add(items_list[i]);
+            let len = cat_list.length;
+            let fillt=[];
+            console.log(items_length)
+            for (let i = 0; i < items_length; i++)
+                for (let j = 0; j < len; j++) {
+                    if(items_list[i]['category'] === cat_list[j])
+                        fillt.push(items_list[i]);
                 }
+
+            if (fillt.length !== 0)
+                outputItems(fillt);
+            else
+                outputItems(items_list);
+        }
+
+        // add the filter to the page
+        function addFilter(div,cat) {
+            let isActive = false;
+            if(div.classList.length != 0)
+                isActive =true
+            if(isActive){
+                categories.pop(cat);
+                div.classList.remove('active');
+            }else if(!isActive){
+                categories.push(cat);
+                div.classList.add('active');
             }
-            console.log(it);
-            outputItems(it);
+            category(categories);
         }
 
 
@@ -60,6 +80,7 @@
             })
             .then((response)=>{
                 items_list = response.data;
+                items_length = response.data.length;
                 outputItems(items_list);
             });
     </script>
