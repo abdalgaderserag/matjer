@@ -20,5 +20,6 @@
 @include('component.footer')
 </body>
 @section('script')
+    <script src="{{ url('/dist/app.js') }}"></script>
 @show
 </html>
