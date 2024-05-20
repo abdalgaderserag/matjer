@@ -55,3 +55,14 @@ div{
     border-radius: 40px;
     padding: 0 20px;
 }
+
+.button-send{
+    background-color: $green;
+    color: #fff;
+    border-radius: 120px;
+    cursor: pointer;
+}
+
+.button-send:hover{
+    background-color: lighten($green,10);
+}

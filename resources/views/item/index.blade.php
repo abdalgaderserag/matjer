@@ -13,6 +13,26 @@
     </div>
     <div id="items">
     </div>
+    <div id="show-item">
+        <div id="det-item" class="card">
+            <img class="item-image" alt="{{ $items[0]['name'] }}" src="{{ $items[0]['images'] }}">
+            <div id="det-card" class="card-info">
+                <div class="card-text">
+                    <span class="card-title">{{ $items[0]['name'] }}</span><br>
+                    <p>{{ $items[0]['details'] }}</p>
+                </div>
+                <div id="order">
+                    <div>
+                        <span>{{ $items[0]['category'] }} | </span>
+                        <span class="green">{{ $items[0]['value'] }}</span>
+                    </div>
+                    <div class="button-send">
+                        Add Item
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('script')
@@ -26,7 +46,7 @@
             let item_card = '';
             for (let i = 0; i <items.length; i++) {
                 let item = items[i];
-                let item_end;
+                let item_end = "";
                 if (item['count'] == 1)
                     item_end = "<span>|</span> only 1 left!";
                 else if (item['count'] == 0)
@@ -83,5 +103,8 @@
                 items_length = response.data.length;
                 outputItems(items_list);
             });
+
+
+        document.getElementById("show-item").style.height = window.innerHeight + 'px';
     </script>
 @endsection

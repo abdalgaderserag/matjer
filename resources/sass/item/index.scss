@@ -48,3 +48,52 @@
     cursor: pointer;
     background-color: $background;
 }
+
+#show-item{
+    width: 100%;
+    background-color: transparentize(darken($background,70),0.2);
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#det-item{
+    background-color: lighten($background,16);
+    display: flex;
+    width: 84%;
+    min-width: 324px;
+    flex-direction: row;
+    .item-image{
+        width: 100%;
+        max-width: 400px;
+        min-width: 300px;
+        cursor: default;
+    }
+    span{
+        cursor: default;
+    }
+
+    .card-text span:first-child{
+        font-size: 17pt;
+        text-decoration: $purple solid from-font underline;
+    }
+    p{
+        color: darken($background,40);
+    }
+}
+
+#det-card{
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#order{
+    display: flex;
+    justify-content: space-between;
+    div{
+        width: fit-content;
+    }
+}
