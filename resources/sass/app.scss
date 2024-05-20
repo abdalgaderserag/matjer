@@ -61,8 +61,9 @@ div{
     color: #fff;
     border-radius: 120px;
     cursor: pointer;
+    padding: 0 14px;
 }
 
 .button-send:hover{
-    background-color: lighten($green,10);
+    background-color: lighten($green,20);
 }

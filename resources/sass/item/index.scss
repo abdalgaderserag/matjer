@@ -74,9 +74,15 @@
         cursor: default;
     }
 
-    .card-text span:first-child{
-        font-size: 17pt;
-        text-decoration: $purple solid from-font underline;
+    .card-text{
+        span:first-child{
+            font-size: 17pt;
+            text-decoration: $purple solid from-font underline;
+        }
+        div{
+            display: flex;
+            justify-content: space-between;
+        }
     }
     p{
         color: darken($background,40);

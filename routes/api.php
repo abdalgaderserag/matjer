@@ -13,6 +13,7 @@ group(function (){
     Route::apiResource('order', 'OrderController');
 });
 
-Route::get('/test',function () {
-    return 1;
+Route::get('orderr/{id}',function ($id){
+    $item = \App\Models\Item::all()->find($id);
+    return response($item);
 });
