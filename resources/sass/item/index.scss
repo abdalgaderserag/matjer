@@ -32,15 +32,19 @@
 }
 
 .card-info{
+    line-height: 24px;
     .card-title{
         cursor: pointer;
     }
     span{
         cursor: pointer;
+        height: 24px;
     }
 }
 .item-image{
     min-width: $card-min;
     width: 100%;
+    padding: 12px;
     cursor: pointer;
+    background-color: $background;
 }

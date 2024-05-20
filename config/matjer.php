@@ -4,11 +4,11 @@ return [
     'curr' => ['$' , 'USD'],
     'category' => [
         'pre-built',
-        'gpus',
-        'cpus',
+        'Gpu',
+        'Cpu',
         'RAMs and Storage',
-        'cooling',
-        'cases and PSU',
+        'Cooling',
+        'Cases and PSU',
         'Others'
     ]
 ];

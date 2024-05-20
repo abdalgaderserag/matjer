@@ -23,7 +23,7 @@ class ItemFactory extends Factory
             'count' => rand(0,8),
             'curr_type' => rand(0,1),
             'details' => $this->faker->paragraph,
-            'images' => '/images/item.png',
+            'images' => '/images/items/'. rand(1,8) .'.webp',
         ];
     }
 }
