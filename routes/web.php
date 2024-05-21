@@ -13,6 +13,6 @@ Route::get('items',function (){
     return view('item.index')->with('items',$items);
 });
 
-Route::get('auth',function (){
-    return view('auth.auth');
-});
+Route::get('login',function (){
+    return redirect('items');
+})->middleware('web');

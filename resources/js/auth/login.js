@@ -4,6 +4,10 @@ window.axios = axios;
 // window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.axios.defaults.headers.common['Accept'] = 'application/json';
 
+window.onresize = ()=>{
+    sizes()
+}
+
 
 let ss = document.getElementById('form-body');
 function sizes(){
@@ -22,6 +26,12 @@ function login() {
         'password' : password
     }
 
+    axios.post('api/login',request).catch((response)=>{
+        console.log(response);
+    }).then((response)=>{
+        console.log(response);
+    });
+    console.log(123)
 }
 
 
@@ -36,6 +46,4 @@ function register() {
         'email' : email,
         'password' : password
     }
-
-    axios.post('api/')
 }

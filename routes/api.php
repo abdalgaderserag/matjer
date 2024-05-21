@@ -20,4 +20,4 @@ Route::get('orderr/{id}',function ($id){
 
 
 
-Route::post('login',);
+Route::post('login','\App\Http\Controllers\LoginController@login');
