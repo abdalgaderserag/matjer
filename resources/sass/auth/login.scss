@@ -1,0 +1,24 @@
+body{
+    margin: 0;
+    width: 100%;
+}
+
+#main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#form-body{
+    width: 52%;
+    height: 420px;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.14);
+    border: rgba(255, 255, 255, 0.14) solid 1px;
+    border-radius: 14px;
+}
+
+#bg-vid{
+    position: fixed;
+    bottom: 0;
+}
