@@ -11,7 +11,7 @@ Route::namespace('\App\Http\Controllers')->
 group(function (){
     Route::apiResource('item','ItemController');
     Route::apiResource('order', 'OrderController');
-});
+})->middleware('auth:sanctum');
 
 Route::get('orderr/{id}',function ($id){
     $item = \App\Models\Item::all()->find($id);
@@ -21,3 +21,6 @@ Route::get('orderr/{id}',function ($id){
 
 
 Route::post('login','\App\Http\Controllers\LoginController@login');
+Route::get('logout',function (){
+
+});

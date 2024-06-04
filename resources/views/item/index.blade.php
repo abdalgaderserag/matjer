@@ -20,6 +20,7 @@
 @section('script')
     @parent
     <script>
+        window.axios.defaults.headers.common['authorization'] = 'bearer '+ sessionStorage['token'];
         let tt = document.getElementById('show-item');
         function showItem(id){
             let item = items_list[id-1];

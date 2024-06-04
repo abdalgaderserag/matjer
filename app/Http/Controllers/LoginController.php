@@ -23,8 +23,13 @@ class LoginController extends Controller
                 'message' => 'wrong password'
             ],401);
         }
-        Auth::loginUsingId($user['id']);
+//        Auth::loginUsingId($user['id']);
         $token = $user->createToken($user['name'] . '-AuthToken')->plainTextToken;
         return response($token);
+    }
+
+    public function logout()
+    {
+
     }
 }

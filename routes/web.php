@@ -14,5 +14,5 @@ Route::get('items',function (){
 });
 
 Route::get('login',function (){
-    return redirect('items');
-})->middleware('web');
+    return view('auth.auth');
+})->middleware('auth:sanctum');

@@ -78,6 +78,7 @@
             console.log(response.data);
         }).then((response)=>{
             sessionStorage['token'] = response.data;
+            window.axios.defaults.headers.common['authorization'] = 'bearer '+ sessionStorage['token'];
             location.href = '{{ url('items') }}';
         });
     }
