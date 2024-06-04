@@ -6,6 +6,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('ggg',function (){
+    return \Illuminate\Support\Facades\Auth::user();
+})->middleware('auth:sanctum');
 
 
 
@@ -16,11 +19,14 @@ group(function (){
     Route::get('logout','LoginController@logout')->name('logout');
 });
 
-Route::middleware('guest')->
+Route::middleware('guest:sanctum')->namespace('\App\Http\Controllers')->
     group(function (){
-        Route::get('login',function (){
-            return view('auth.auth');
-        })->name('auth');
-        Route::post('login','\App\Http\Controllers\LoginController@login')->name('login');
-        Route::get('logout','\App\Http\Controllers\LoginController@logout')->name('logout');
+        Route::post('login','LoginController@login')->name('login');
+        Route::get('logout','LoginController@logout')->name('logout');
+        Route::post('register', 'RegisterController@register')->name('register');
 });
+
+Route::get('login',function (){
+    return view('auth.auth');
+})->name('auth');
+

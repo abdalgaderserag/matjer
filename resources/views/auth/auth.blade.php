@@ -32,7 +32,8 @@
         <br>
         <br>
         <br>
-        {{--        <form action="" method="post">--}}
+        <form action="{{ route('register') }}" method="post">
+            @csrf
         <label for="name">your name :</label>
         <input type="name" name="name" id="name">
         <br>
@@ -42,8 +43,9 @@
         <label for="password">password :</label>
         <input type="password" name="password" id="passwordR">
         <br>
-        <button type="submit" onclick="register()">Login</button>
-        {{--        </form>--}}
+{{--        <button type="submit" onclick="register()">Login</button>--}}
+        <button type="submit">Login</button>
+        </form>
     </div>
 </div>
 <script>
@@ -65,38 +67,38 @@
     }
     sizes();
 
-    function login() {
-        let email = document.getElementById('email').value;
-        let password = document.getElementById('password').value;
+    {{--function login() {--}}
+    {{--    let email = document.getElementById('email').value;--}}
+    {{--    let password = document.getElementById('password').value;--}}
 
-        let request = {
-            'email' : email,
-            'password' : password
-        }
-
-
-        axios.post('api/login',request).catch((response)=>{
-            console.log(response.data);
-        }).then((response)=>{
-            sessionStorage['token'] = response.data;
-            window.axios.defaults.headers.common['authorization'] = 'bearer '+ sessionStorage['token'];
-            location.href = '{{ url('items') }}';
-        });
-    }
+    {{--    let request = {--}}
+    {{--        'email' : email,--}}
+    {{--        'password' : password--}}
+    {{--    }--}}
 
 
-    function register() {
-        let name = document.getElementById('name').innerText;
-        let email = document.getElementById('emailR').innerText;
-        let password = document.getElementById('passwordR').innerText;
+    {{--    axios.post('api/login',request).catch((response)=>{--}}
+    {{--        console.log(response.data);--}}
+    {{--    }).then((response)=>{--}}
+    {{--        sessionStorage['token'] = response.data;--}}
+    {{--        window.axios.defaults.headers.common['authorization'] = 'bearer '+ sessionStorage['token'];--}}
+    {{--        location.href = '{{ url('items') }}';--}}
+    {{--    });--}}
+    {{--}--}}
 
 
-        let request = {
-            'name' : name,
-            'email' : email,
-            'password' : password
-        }
-    }
+    {{--function register() {--}}
+    {{--    let name = document.getElementById('name').innerText;--}}
+    {{--    let email = document.getElementById('emailR').innerText;--}}
+    {{--    let password = document.getElementById('passwordR').innerText;--}}
+
+
+    {{--    let request = {--}}
+    {{--        'name' : name,--}}
+    {{--        'email' : email,--}}
+    {{--        'password' : password--}}
+    {{--    }--}}
+    {{--}--}}
 </script>
 
 </body>
