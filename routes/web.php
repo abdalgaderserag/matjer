@@ -8,11 +8,19 @@ Route::get('/', function () {
 
 
 
-Route::get('items',function (){
-    $items = \App\Models\Item::all();
-    return view('item.index')->with('items',$items);
+
+
+Route::middleware('auth:sanctum')->namespace('\App\Http\Controllers')->
+group(function (){
+    Route::get('items','ItemController@main')->name('items');
+    Route::get('logout','LoginController@logout')->name('logout');
 });
 
-Route::get('login',function (){
-    return view('auth.auth');
-})->middleware('auth:sanctum');
+Route::middleware('guest')->
+    group(function (){
+        Route::get('login',function (){
+            return view('auth.auth');
+        })->name('auth');
+        Route::post('login','\App\Http\Controllers\LoginController@login')->name('login');
+        Route::get('logout','\App\Http\Controllers\LoginController@logout')->name('logout');
+});

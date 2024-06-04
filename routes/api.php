@@ -18,9 +18,3 @@ Route::get('orderr/{id}',function ($id){
     return response($item);
 });
 
-
-
-Route::post('login','\App\Http\Controllers\LoginController@login');
-Route::get('logout',function (){
-
-});

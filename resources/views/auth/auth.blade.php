@@ -16,15 +16,17 @@
 <video id="bg-vid" autoplay muted loop src="{{ url('static/login.mp4') }}"></video>
 <div id="main">
     <div id="form-body">
-{{--        <form action="" method="post">--}}
+        <form action="{{ route('login') }}" method="post">
+            @csrf
             <label for="email">your email :</label>
             <input type="email" name="email" id="email">
             <br>
             <label for="password">password :</label>
             <input type="password" name="password" id="password">
             <br>
-            <button type="submit" onclick="login()">Login</button>
-{{--        </form>--}}
+{{--            <button type="submit" onclick="login()">Login</button>--}}
+            <button type="submit">Login</button>
+        </form>
 
         <br>
         <br>
@@ -72,7 +74,6 @@
             'password' : password
         }
 
-        console.log(document.getElementById('email').innerText);
 
         axios.post('api/login',request).catch((response)=>{
             console.log(response.data);

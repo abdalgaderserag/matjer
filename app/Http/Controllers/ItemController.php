@@ -7,9 +7,24 @@ use App\Http\Requests\UpdateItemRequest;
 use App\Models\Item;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 
 class ItemController extends Controller
 {
+
+    /**
+     * Display a listing of the resource.
+     *
+     *
+     */
+    public function main()
+    {
+        $items = Item::all();
+        $user = Auth::user();
+        $token = $user->createToken($user['name'] . '-AuthToken')->plainTextToken;
+        return view('item.index')->with(['items' => $items,'token' => $token]);
+    }
+
     /**
      * Display a listing of the resource.
      *
