@@ -30,10 +30,8 @@ class LoginController extends Controller
 
     public function logout()
     {
-        return  1;
-        return Auth::user();
-        Auth::user()->tokens()->delete();
-        Auth::logout();
-        redirect()->route('login');
+        $user = Auth::user();
+        $user->tokens()->delete();
+        return redirect('login');
     }
 }

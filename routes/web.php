@@ -21,12 +21,10 @@ group(function (){
 
 Route::middleware('guest:sanctum')->namespace('\App\Http\Controllers')->
     group(function (){
+    Route::get('login',function (){
+        return view('auth.auth');
+    })->name('auth');
         Route::post('login','LoginController@login')->name('login');
-        Route::get('logout','LoginController@logout')->name('logout');
         Route::post('register', 'RegisterController@register')->name('register');
 });
-
-Route::get('login',function (){
-    return view('auth.auth');
-})->name('auth');
 
