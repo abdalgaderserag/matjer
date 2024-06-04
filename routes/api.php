@@ -12,9 +12,6 @@ group(function (){
     Route::apiResource('item','ItemController');
     Route::apiResource('order', 'OrderController');
     Route::post('add_to_cart/{id}','CartController@store');
-    Route::get('cart',function (){
-        return response(\App\Models\Cart::all()->toJson());
-    });
 })->middleware('auth:sanctum');
 
 

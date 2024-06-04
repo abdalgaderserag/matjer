@@ -6,11 +6,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('ggg',function (){
-    return \Illuminate\Support\Facades\Auth::user();
-})->middleware('auth:sanctum');
-
-
 
 
 Route::middleware('auth:sanctum')->namespace('\App\Http\Controllers')->
@@ -21,9 +16,10 @@ group(function (){
 
 Route::middleware('guest:sanctum')->namespace('\App\Http\Controllers')->
     group(function (){
-    Route::get('login',function (){
-        return view('auth.auth');
-    })->name('auth');
+
+        Route::get('login',function (){
+            return view('auth.auth');
+        })->name('auth');
         Route::post('login','LoginController@login')->name('login');
         Route::post('register', 'RegisterController@register')->name('register');
 });

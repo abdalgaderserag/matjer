@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('item_id',0,1);
             $table->integer('order_id',0,1)->nullable();
+            $table->integer('user_id',0,1);
             $table->integer('count',0,1);
             $table->timestamps();
         });
