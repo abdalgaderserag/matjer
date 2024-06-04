@@ -8,13 +8,12 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-    public function store(StoreCartRequest $request)
+    public function store(Request $request, $id)
     {
         $cart = new Cart([
-                'item_id'=>$request['item_id'],
+                'item_id'=>$id,
                 'count'=>$request['count']]
         );
-
         $cart->save();
         return response(1);
     }

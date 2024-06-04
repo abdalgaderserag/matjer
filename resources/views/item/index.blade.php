@@ -35,7 +35,11 @@
 
 
         function orderItem(id){
-            axios.get('api/orderr/'+id).catch((error)=>{
+            let req = {
+                'item_id' : id,
+                'count' : 1
+            };
+            axios.post('api/add_to_cart/'+id,req).catch((error)=>{
 
             }).then((response)=>{
                 console.log(response);
