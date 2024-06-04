@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Cart;
 use App\Models\Item;
 use App\Models\Order;
 use App\Models\User;
@@ -26,7 +27,8 @@ class DatabaseSeeder extends Seeder
 
         Order::factory()->create([
             'user_id' => 1,
-            'items' => '[0, 1, 3]',
         ]);
+
+        Cart::factory(4)->create();
     }
 }

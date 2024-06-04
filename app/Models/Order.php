@@ -15,7 +15,6 @@ class Order extends Model
      */
     protected $fillable = [
         'user_id',
-        'items',
         'token',
     ];
 }
